@@ -35,7 +35,7 @@ split {
 			return true;
 		}
 	} else if(vars.currentSplit == 2) {
-		if(current.Scene == "Scene_Dungeon_IceMountain") {
+		if(current.Scene == "Scene_Dungeon_WaterSpring") {
 			vars.currentSplit++;
 		}
 	} else if(vars.currentSplit == 3) {
