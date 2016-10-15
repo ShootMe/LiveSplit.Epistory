@@ -14,7 +14,7 @@ init {
 start {
 	vars.currentSplit = 0;
 	timer.IsGameTimePaused = true;
-	return old.Scene == "Scene_main_menu" && current.SceneToLoad != "Scene_main_menu";
+	return old.Scene == "Scene_main_menu" && current.SceneToLoad != "Scene_main_menu" && !string.IsNullOrEmpty(current.SceneToLoad);
 }
 reset {
 	return current.SceneToLoad == "Scene_main_menu";
