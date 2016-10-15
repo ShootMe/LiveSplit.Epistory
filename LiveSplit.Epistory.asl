@@ -6,18 +6,13 @@ state("Epistory", "1.0") {
 	string200 Scene : "mono.dll", 0x294B88, 0x20, 0x250, 0x18, 0x38, 0x14;
 	string200 SceneToLoad : "mono.dll", 0x294B88, 0x20, 0x250, 0x18, 0xa0, 0x14;
 }
-startup {
-	settings.Add("Burning Hollow");
-	settings.Add("Drowning Halls");
-	settings.Add("Creation City");
-	settings.Add("Shattered Isles");
-}
 init {
 	version = "1.0";
 	vars.currentSplit = 0;
 	print("Size: " + modules.First().ModuleMemorySize.ToString());
 }
 start {
+	vars.currentSplit = 0;
 	timer.IsGameTimePaused = true;
 	return old.Scene == "Scene_main_menu" && current.SceneToLoad != "Scene_main_menu";
 }
