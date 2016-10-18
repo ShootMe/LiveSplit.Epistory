@@ -35,7 +35,6 @@ SCORE_COMBO_MANAGER
 	ComboGainLevelArray				[0, 5, 5, 10, 15, 20, 20, 25, 25, 30, 30, 30, 35, 35, 40]
 	ComputedResetTimeBonusBase			0.4f
 	ComputedResetTimeBonusPerLetter			0.25f
-	EffectiveComboResetTime				14.5f
 
 SKILL_MANAGER
 	LightningRange					25.0f
