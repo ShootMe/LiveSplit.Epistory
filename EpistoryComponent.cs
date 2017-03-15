@@ -2,17 +2,18 @@
 using LiveSplit.Model;
 using LiveSplit.UI;
 using LiveSplit.UI.Components;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Xml;
 #endif
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
-using System.Xml;
 namespace LiveSplit.Epistory {
 #if !Info
 	public class EpistoryComponent : IComponent {
 		public TimerModel Model { get; set; }
+		private string lastScene = null;
 #else
 	public class EpistoryComponent {
 #endif
@@ -24,7 +25,6 @@ namespace LiveSplit.Epistory {
 		private bool hasLog = false;
 		private Dictionary<string, string> currentValues = new Dictionary<string, string>();
 		private static string LOGFILE = "_Epistory.log";
-		private string lastScene = null;
 		public EpistoryComponent() {
 			mem = new EpistoryMemory();
 			foreach (string key in keys) {
@@ -81,6 +81,8 @@ namespace LiveSplit.Epistory {
 
 				Model.CurrentState.IsGameTimePaused = (mem.GetGamePaused() || mem.GetInMenu()) && !mem.GetInGameMenu();
 			}
+			
+			lastScene = scene;
 
 			HandleSplit(shouldSplit, sceneToLoad == "Scene_main_menu");
 		}

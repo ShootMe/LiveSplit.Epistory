@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 namespace LiveSplit.Epistory {
@@ -18,6 +19,7 @@ namespace LiveSplit.Epistory {
 		public EpistoryInformation() {
 			this.DoubleBuffered = true;
 			InitializeComponent();
+			Text = "Epistory Information " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 			Memory = new EpistoryMemory();
 			Thread t = new Thread(UpdateLoop);
 			t.IsBackground = true;

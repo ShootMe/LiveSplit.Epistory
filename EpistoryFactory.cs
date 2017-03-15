@@ -4,7 +4,7 @@ using LiveSplit.UI.Components;
 using System;
 using System.Reflection;
 namespace LiveSplit.Epistory {
-	public class HollowKnightFactory : IComponentFactory {
+	public class EpistoryFactory : IComponentFactory {
 		public string ComponentName { get { return "Epistory Autosplitter v" + this.Version.ToString(); } }
 		public string Description { get { return "Autosplitter for Epistory"; } }
 		public ComponentCategory Category { get { return ComponentCategory.Control; } }
